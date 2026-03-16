@@ -1,41 +1,4 @@
-[X] Stage has width equal to 80 when created
-[X] Stage has height equal to 25 when created
-
-[X] At least 2 paddles can be created
-[X] Paddles can have varying size when created
-[X] Paddles are placed side by side when created
-[X] Paddles size bigger than stage height?
-[X] Paddles are placed at half the stage height when created
-[X] Paddles move up and down
-[X] Paddles' movement is limited by the top and bottom game bounds
-
-[X] Ball starts at stage center when created
-[X] Ball's initial direction is (1,1) when created
-[X] Ball moves according to its current direction
-[X] Ball bounces off top and bottom stage bounds
-[X] Ball bounces off paddles
-[X] Ball resets back to stage center when it touches left and right stage bounds
-[X] Ball inverts horizontal direction when it resets back to stage center
-
-[X] Game has two players when created
-[X] Players start each with score equal to zero when game is created
-[X] Player scores when ball hits right or left game bounds
-[X] Game ends when a player hits a predetermined score
-
-[X] Display game stage on screen
-[X] Display paddles on screen
-[X] Display ball on screen
-[X] Display scores on screen
-
-[X] Game tick
-[X] Ball moves on game tick
-
-[X] Redraw screen on tick
-
-[X] Refactor tick to be a part of ball controller component
-
-[X] Input
-[X] Paddles move on players input
-
-[X] Display "match ended" message on screen
-[X] Ball and input stop on match ended
+[X] Ball collision with stage bounds is handled by ball interactor in the use cases layer
+[ ] Ball collision with paddles is handled by ball interactor in the use cases layer
+[ ] Ball goal is handled by ball interactor in the use cases layer
+[ ] Players score increment is handled by players interactor in the use cases layer

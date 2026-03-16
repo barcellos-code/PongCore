@@ -4,8 +4,7 @@ using Paddles;
 
 namespace Ball
 {
-    internal class Ball(int posX, int posY, int dirX, int dirY, int stageWidth,
-        int stageHeight) : IBall
+    internal class Ball(int posX, int posY, int dirX, int dirY, int stageWidth) : IBall
     {
         public int PositionX { get; private set; } = posX;
 
@@ -19,11 +18,9 @@ namespace Ball
         private readonly int _initialPosX = posX;
         private readonly int _initialPosY = posY;
         private readonly int _stageWidth = stageWidth;
-        private readonly int _stageHeight = stageHeight;
 
         public void Move()
         {
-            BounceOffStageBounds();
             BounceOffPaddles();
 
             PositionX += DirectionX;
@@ -32,12 +29,8 @@ namespace Ball
             ResetBackToStageCenter();
         }
 
-        private void BounceOffStageBounds()
-        {
-            if (PositionY >= _stageHeight - 1
-                || PositionY <= 0)
-                DirectionY *= -1;
-        }
+        public void InvertDirectionY()
+            => DirectionY *= -1;
 
         private void BounceOffPaddles()
         {

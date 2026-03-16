@@ -14,6 +14,7 @@
     <Project Path="_2_Use_Cases/PaddlesInteractor/PaddlesInteractor.csproj" />
     <Project Path="_2_Use_Cases/PlayersInteractor/PlayersInteractor.csproj" />
     <Project Path="_2_Use_Cases/StageInteractor/StageInteractor.csproj" />
+    <Project Path="_2_Use_Cases/UseCasesTests/UseCasesTests.csproj" />
   </Folder>
   <Folder Name="/_3_Controllers_and_Presenters/">
     <Project Path="_3_Controllers_and_Presenters/BallController/BallController.csproj" />
