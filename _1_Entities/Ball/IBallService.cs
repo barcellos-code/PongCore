@@ -2,7 +2,7 @@
 {
     public interface IBallService : IDisposable
     {
-        void CreateBall(int stageWidth, int stageHeight, int directionX, int directionY);
+        void CreateBall(int posX, int posY, int directionX, int directionY);
         IBall GetBall();
     }
 }

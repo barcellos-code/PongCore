@@ -26,16 +26,18 @@ internal class BallInteractor : IBallInteractor
         _paddlesService = paddlesService;
     }
 
-    public void CreateBall(int stageWidth, int stageHeight, int directionX, int directionY)
-        => _ballService.CreateBall(stageWidth, stageHeight, directionX, directionY);
+    public void CreateBall(int posX, int posY, int directionX, int directionY)
+        => _ballService.CreateBall(posX, posY, directionX, directionY);
 
     public void MoveBall()
     {
         var ball = _ballService.GetBall();
+        var stage = _stageService.GetStage();
 
         BounceBallOffPaddles(ball);
         ball.Move();
-        BounceBallOffStageBounds(ball);
+        BounceBallOffStageBounds(ball, stage);
+        ResetBallBackToStageCenter(ball, stage);
 
         _ballPresenter?.DrawBall(ball.PositionX, ball.PositionY);
     }
@@ -66,11 +68,22 @@ internal class BallInteractor : IBallInteractor
         }
     }
 
-    private void BounceBallOffStageBounds(IBall ball)
+    private static void BounceBallOffStageBounds(IBall ball, IStage stage)
     {
-        var stage = _stageService.GetStage();
-
         if (ball.PositionY >= stage.Height - 1 || ball.PositionY <= 0)
             ball.InvertDirectionY();
+    }
+
+    private static void ResetBallBackToStageCenter(IBall ball, IStage stage)
+    {
+        var hitLeftGoal = ball.PositionX < 0;
+        var hitRightGoal = ball.PositionX >= stage.Width;
+
+        if (hitLeftGoal || hitRightGoal)
+        {
+            ball.SetPosition(stage.Width / 2, stage.Height / 2);
+            ball.InvertDirectionX();
+            ball.InvokeOnHitGoal(hitRightGoal ? 0 : 1);
+        }
     }
 }

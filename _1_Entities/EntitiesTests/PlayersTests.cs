@@ -120,7 +120,7 @@ namespace EntitiesTests
             var ballDirX = 1;
             var ballDirY = 1;
             _playersService?.CreatePlayers(numberOfPlayers);
-            _ballService?.CreateBall(stageWidth, stageHeight, ballDirX, ballDirY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, ballDirX, ballDirY);
             _playersService?.BindGoalEvents();
             var ball = _ballService?.GetBall();
             var expectedScoreValue = 1;
@@ -160,7 +160,7 @@ namespace EntitiesTests
             _ballService?.Dispose();
             numberOfPlayers = 2;
             _playersService?.CreatePlayers(numberOfPlayers);
-            _ballService?.CreateBall(stageWidth, stageHeight, ballDirX, ballDirY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, ballDirX, ballDirY);
             _playersService?.BindGoalEvents();
             ball = _ballService?.GetBall();
             var expectedPlayerOneScoreValue = 1;
@@ -209,7 +209,7 @@ namespace EntitiesTests
             _ballService?.Dispose();
             numberOfPlayers = 5;
             _playersService?.CreatePlayers(numberOfPlayers);
-            _ballService?.CreateBall(stageWidth, stageHeight, ballDirX, ballDirY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, ballDirX, ballDirY);
             _playersService?.BindGoalEvents();
             ball = _ballService?.GetBall();
             expectedPlayerOneScoreValue = 1;

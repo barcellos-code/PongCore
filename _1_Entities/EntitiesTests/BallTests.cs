@@ -44,8 +44,7 @@ namespace EntitiesTests
             _ballService?.Dispose();
 
             // Act
-            _ballService?.CreateBall(stageWidth, stageHeight, initialDirectionX,
-                initialDirectionY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, initialDirectionX, initialDirectionY);
             var ball = _ballService?.GetBall();
             var actualBallPosX = ball?.PositionX;
             var actualBallPosY = ball?.PositionY;
@@ -62,8 +61,7 @@ namespace EntitiesTests
             _ballService?.Dispose();
 
             // Act
-            _ballService?.CreateBall(stageWidth, stageHeight, initialDirectionX,
-                initialDirectionY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, initialDirectionX, initialDirectionY);
             ball = _ballService?.GetBall();
             actualBallPosX = ball?.PositionX;
             actualBallPosY = ball?.PositionY;
@@ -80,8 +78,7 @@ namespace EntitiesTests
             _ballService?.Dispose();
 
             // Act
-            _ballService?.CreateBall(stageWidth, stageHeight, initialDirectionX,
-                initialDirectionY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, initialDirectionX, initialDirectionY);
             ball = _ballService?.GetBall();
             actualBallPosX = ball?.PositionX;
             actualBallPosY = ball?.PositionY;
@@ -98,8 +95,7 @@ namespace EntitiesTests
             _ballService?.Dispose();
 
             // Act
-            _ballService?.CreateBall(stageWidth, stageHeight, initialDirectionX,
-                initialDirectionY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, initialDirectionX, initialDirectionY);
             ball = _ballService?.GetBall();
             actualBallPosX = ball?.PositionX;
             actualBallPosY = ball?.PositionY;
@@ -116,8 +112,7 @@ namespace EntitiesTests
             _ballService?.Dispose();
 
             // Act
-            _ballService?.CreateBall(stageWidth, stageHeight, initialDirectionX,
-                initialDirectionY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, initialDirectionX, initialDirectionY);
             ball = _ballService?.GetBall();
             actualBallPosX = ball?.PositionX;
             actualBallPosY = ball?.PositionY;
@@ -140,7 +135,7 @@ namespace EntitiesTests
             var expectedDirectionY = 1;
 
             // Act
-            _ballService?.CreateBall(stageWidth, stageHeight, inputDirectionX, inputDirectionY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, inputDirectionX, inputDirectionY);
             var ball = _ballService?.GetBall();
             var actualDirectionX = ball?.DirectionX;
             var actualDirectionY = ball?.DirectionY;
@@ -157,7 +152,7 @@ namespace EntitiesTests
             expectedDirectionY = -1;
 
             // Act
-            _ballService?.CreateBall(stageWidth, stageHeight, inputDirectionX, inputDirectionY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, inputDirectionX, inputDirectionY);
             ball = _ballService?.GetBall();
             actualDirectionX = ball?.DirectionX;
             actualDirectionY = ball?.DirectionY;
@@ -174,7 +169,7 @@ namespace EntitiesTests
             expectedDirectionY = 1;
 
             // Act
-            _ballService?.CreateBall(stageWidth, stageHeight, inputDirectionX, inputDirectionY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, inputDirectionX, inputDirectionY);
             ball = _ballService?.GetBall();
             actualDirectionX = ball?.DirectionX;
             actualDirectionY = ball?.DirectionY;
@@ -191,7 +186,7 @@ namespace EntitiesTests
             expectedDirectionY = -1;
 
             // Act
-            _ballService?.CreateBall(stageWidth, stageHeight, inputDirectionX, inputDirectionY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, inputDirectionX, inputDirectionY);
             ball = _ballService?.GetBall();
             actualDirectionX = ball?.DirectionX;
             actualDirectionY = ball?.DirectionY;
@@ -210,7 +205,7 @@ namespace EntitiesTests
             var stageHeight = 80;
             var inputDirectionX = 1;
             var inputDirectionY = 1;
-            _ballService?.CreateBall(stageWidth, stageHeight, inputDirectionX, inputDirectionY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, inputDirectionX, inputDirectionY);
             var ball = _ballService?.GetBall();
             var expectedBallPosX = 51;
             var expectedBallPosY = 41;
@@ -268,7 +263,7 @@ namespace EntitiesTests
             _ballService?.Dispose();
             inputDirectionX = 1;
             inputDirectionY = -1;
-            _ballService?.CreateBall(stageWidth, stageHeight, inputDirectionX, inputDirectionY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, inputDirectionX, inputDirectionY);
             ball = _ballService?.GetBall();
             expectedBallPosX = 60;
             expectedBallPosY = 30;
@@ -287,7 +282,7 @@ namespace EntitiesTests
             _ballService?.Dispose();
             inputDirectionX = -1;
             inputDirectionY = -1;
-            _ballService?.CreateBall(stageWidth, stageHeight, inputDirectionX, inputDirectionY);
+            _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, inputDirectionX, inputDirectionY);
             ball = _ballService?.GetBall();
             expectedBallPosX = 40;
             expectedBallPosY = 30;
@@ -301,92 +296,6 @@ namespace EntitiesTests
             // Assert
             Assert.AreEqual(expectedBallPosX, actualBallPosX);
             Assert.AreEqual(expectedBallPosY, actualBallPosY);
-        }
-
-        [TestMethod]
-        public void TestBallReset()
-        {
-            // Arrange
-            _ballService?.Dispose();
-            var stageWidth = 11;
-            var stageHeight = 100;
-            var directionX = 1;
-            var directionY = 1;
-            _ballService?.CreateBall(stageWidth, stageHeight, directionX, directionY);
-            var ball = _ballService?.GetBall();
-            var expectedBallPosX = 5;
-            var expectedBallPosY = 50;
-
-            // Act
-            for (var i = 1; i <= 6; i++)
-                ball?.Move();
-            var actualBallPosX = ball?.PositionX;
-            var actualBallPosY = ball?.PositionY;
-
-            // Assert
-            Assert.AreEqual(expectedBallPosX, actualBallPosX);
-            Assert.AreEqual(expectedBallPosY, actualBallPosY);
-
-            // Arrange
-            _ballService?.Dispose();
-            stageWidth = 20;
-            stageHeight = 5;
-            directionX = -1;
-            directionY = -1;
-            _ballService?.CreateBall(stageWidth, stageHeight, directionX, directionY);
-            ball = _ballService?.GetBall();
-            expectedBallPosX = 10;
-            expectedBallPosY = 2;
-
-            // Act
-            for (var i = 1; i <= 11; i++)
-                ball?.Move();
-            actualBallPosX = ball?.PositionX;
-            actualBallPosY = ball?.PositionY;
-
-            // Assert
-            Assert.AreEqual(expectedBallPosX, actualBallPosX);
-            Assert.AreEqual(expectedBallPosY, actualBallPosY);
-        }
-
-        [TestMethod]
-        public void TestDirectionInvertAfterReset()
-        {
-            // Arrange
-            _ballService?.Dispose();
-            var stageWidth = 11;
-            var stageHeight = 100;
-            var directionX = 1;
-            var directionY = 1;
-            _ballService?.CreateBall(stageWidth, stageHeight, directionX, directionY);
-            var ball = _ballService?.GetBall();
-            var expectedBallDirectionX = -1;
-
-            // Act
-            for (var i = 1; i <= 6; i++)
-                ball?.Move();
-            var actualBallDirectionX = ball?.DirectionX;
-
-            // Assert
-            Assert.AreEqual(expectedBallDirectionX, actualBallDirectionX);
-
-            // Arrange
-            _ballService?.Dispose();
-            stageWidth = 20;
-            stageHeight = 5;
-            directionX = -1;
-            directionY = -1;
-            _ballService?.CreateBall(stageWidth, stageHeight, directionX, directionY);
-            ball = _ballService?.GetBall();
-            expectedBallDirectionX = 1;
-
-            // Act
-            for (var i = 1; i <= 11; i++)
-                ball?.Move();
-            actualBallDirectionX = ball?.DirectionX;
-
-            // Assert
-            Assert.AreEqual(expectedBallDirectionX, actualBallDirectionX);
         }
     }
 }

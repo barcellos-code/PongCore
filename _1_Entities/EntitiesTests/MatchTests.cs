@@ -55,7 +55,7 @@ public sealed class MatchTests
 
         // Act
         _playersService?.CreatePlayers(numberOfPlayers);
-        _ballService?.CreateBall(stageWidth, stageHeight, ballInitialDirX, ballInitialDirY);
+        _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, ballInitialDirX, ballInitialDirY);
         _playersService?.BindGoalEvents();
         _matchService?.CreateMatch(winningScoreValue);
         _matchService?.BindScoreEvents();
@@ -104,7 +104,7 @@ public sealed class MatchTests
 
         // Act
         _playersService?.CreatePlayers(numberOfPlayers);
-        _ballService?.CreateBall(stageWidth, stageHeight, ballInitialDirX, ballInitialDirY);
+        _ballService?.CreateBall(stageWidth / 2, stageHeight / 2, ballInitialDirX, ballInitialDirY);
         _playersService?.BindGoalEvents();
         _matchService?.CreateMatch(winningScoreValue);
         _matchService?.BindScoreEvents();

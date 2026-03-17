@@ -9,9 +9,9 @@ internal class BallController(IBallInteractor ballInteractor, IMatchInteractor m
     private readonly IMatchInteractor  _matchInteractor = matchInteractor;
     private readonly BallTick _ballTick = new();
 
-    public void CreateBall(int stageWidth, int stageHeight, int directionX, int directionY)
+    public void CreateBall(int posX, int posY, int directionX, int directionY)
     {
-        _ballInteractor.CreateBall(stageWidth, stageHeight, directionX, directionY);
+        _ballInteractor.CreateBall(posX, posY, directionX, directionY);
         _ballTick.OnTick += MoveBall;
     }
 

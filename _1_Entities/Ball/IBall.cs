@@ -10,5 +10,7 @@
         void Move();
         void InvertDirectionX();
         void InvertDirectionY();
+        void SetPosition(int posX, int posY);
+        void InvokeOnHitGoal(int goalIndex);
     }
 }

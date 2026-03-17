@@ -35,7 +35,7 @@ internal class Program
         var viewBatch = serviceProvider.GetService<IViewBatch>() ?? throw new NullReferenceException($"Unable to retrieve {nameof(IViewBatch)}");
         
         // Create Game Entities
-        ballController.CreateBall(StageWidth, StageHeight, BallInitialDirX, BallInitialDirY);
+        ballController.CreateBall(StageWidth / 2, StageHeight / 2, BallInitialDirX, BallInitialDirY);
         matchController.CreateMatch(WinningScore, StageWidth, StageHeight);
         paddlesController.CreatePaddles(NumberOfPlayers, PaddleSize, StageWidth, StageHeight);
         playersController.CreatePlayers(NumberOfPlayers, StageWidth, StageHeight);

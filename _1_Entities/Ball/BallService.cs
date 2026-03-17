@@ -4,12 +4,8 @@
     {
         private Ball? _ball;
 
-        public void CreateBall(int stageWidth, int stageHeight, int directionX, int directionY)
-        {
-            var posX = stageWidth / 2;
-            var posY = stageHeight / 2;
-            _ball = new(posX, posY, directionX, directionY, stageWidth);
-        }
+        public void CreateBall(int posX, int posY, int directionX, int directionY)
+            => _ball = new(posX, posY, directionX, directionY);
 
         public void Dispose()
             => _ball = null;
