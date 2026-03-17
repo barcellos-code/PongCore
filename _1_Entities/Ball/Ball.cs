@@ -1,8 +1,4 @@
-﻿using Container;
-using Microsoft.Extensions.DependencyInjection;
-using Paddles;
-
-namespace Ball
+﻿namespace Ball
 {
     internal class Ball(int posX, int posY, int dirX, int dirY, int stageWidth) : IBall
     {
@@ -21,44 +17,17 @@ namespace Ball
 
         public void Move()
         {
-            BounceOffPaddles();
-
             PositionX += DirectionX;
             PositionY += DirectionY;
 
             ResetBackToStageCenter();
         }
 
+        public void InvertDirectionX()
+            => DirectionX *= -1;
+        
         public void InvertDirectionY()
             => DirectionY *= -1;
-
-        private void BounceOffPaddles()
-        {
-            var paddlesService = DependencyContainer.ServiceProvider?.GetService<IPaddlesService>();
-            
-            for (var i = 0; i < paddlesService?.NumberOfPaddles; i++)
-            {
-                var paddle = paddlesService?.GetPaddle(i);
-
-                var isBallTouchingPaddleFromTheRight
-                    = DirectionX < 0 && PositionX == paddle?.PositionX + 1;
-                
-                var isBallTouchingPaddleFromTheLeft
-                    = DirectionX > 0 && PositionX == paddle?.PositionX - 1;
-                
-                var isBallVerticallyAlignedWithPaddle
-                    = PositionY >= paddle?.PositionY
-                        && PositionY <= paddle?.PositionY + paddle?.Size;
-                
-                if (isBallVerticallyAlignedWithPaddle
-                    && (isBallTouchingPaddleFromTheRight
-                        || isBallTouchingPaddleFromTheLeft))
-                {
-                    DirectionX *= -1;
-                    return;
-                }
-            }
-        }
 
         private void ResetBackToStageCenter()
         {

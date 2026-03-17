@@ -46,7 +46,10 @@ internal class PaddlesInteractor(IPaddlesService paddlesService) : IPaddlesInter
     private static void DrawPaddle(IPaddle paddle)
     {
         var serviceProvider = DependencyContainer.ServiceProvider ?? throw new NullReferenceException($"{nameof(DependencyContainer)} does not have a {nameof(ServiceProvider)}");
-        var paddlePresenter = serviceProvider.GetService<IPaddlePresenter>() ?? throw new NullReferenceException($"Unable to retrieve {nameof(IPaddlePresenter)}");
+        var paddlePresenter = serviceProvider.GetService<IPaddlePresenter>();
+
+        if (paddlePresenter is null)
+            return;
         
         paddlePresenter.DrawPaddle(paddle.Size, paddle.PositionX, paddle.PositionY);
     }

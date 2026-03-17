@@ -8,6 +8,7 @@
         int DirectionY { get; }
         event Action<int> OnHitGoal;
         void Move();
+        void InvertDirectionX();
         void InvertDirectionY();
     }
 }

@@ -1,4 +1,5 @@
 [X] Ball collision with stage bounds is handled by ball interactor in the use cases layer
-[ ] Ball collision with paddles is handled by ball interactor in the use cases layer
-[ ] Ball goal is handled by ball interactor in the use cases layer
+[X] Ball collision with paddles is handled by ball interactor in the use cases layer
+[ ] Ball reset position on goal is handled by ball interactor in the use cases layer
+[ ] Ball doesn't need to know stage size
 [ ] Players score increment is handled by players interactor in the use cases layer

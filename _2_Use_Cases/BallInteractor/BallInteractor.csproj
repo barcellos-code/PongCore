@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\_1_Entities\Ball\Ball.csproj" />
+    <ProjectReference Include="..\..\_1_Entities\Paddles\Paddles.csproj" />
     <ProjectReference Include="..\..\_1_Entities\Stage\Stage.csproj" />
   </ItemGroup>
 
