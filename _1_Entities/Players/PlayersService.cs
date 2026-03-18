@@ -28,15 +28,6 @@
             return _players[index];
         }
 
-        public void BindGoalEvents()
-        {
-            if (NumberOfPlayers == 0)
-                throw new InvalidOperationException("Players have not been created.");
-            
-            for (var i = 0; i < NumberOfPlayers && i < MaxScoringPlayersAmount; i++)
-                _players[i].BindGoalEvent(i);
-        }
-
         public void Dispose()
             => _players.Clear();
     }

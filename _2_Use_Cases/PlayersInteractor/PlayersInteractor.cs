@@ -1,12 +1,14 @@
+using Ball;
 using Container;
 using Microsoft.Extensions.DependencyInjection;
 using Players;
 
 namespace PlayersInteractor;
 
-internal class PlayersInteractor(IPlayersService playersService) : IPlayersInteractor
+internal class PlayersInteractor(IPlayersService playersService, IBallService ballService) : IPlayersInteractor
 {
     private readonly IPlayersService _playersService = playersService;
+    private readonly IBallService _ballService = ballService;
 
     private int _screenWidth;
     private int _screenHeight;
@@ -23,7 +25,14 @@ internal class PlayersInteractor(IPlayersService playersService) : IPlayersInter
     }
 
     public void BindGoalEvents()
-        => _playersService.BindGoalEvents();
+    {
+        for (var i = 0; i < _playersService.NumberOfPlayers; i++)
+        {
+            var player = _playersService.GetPlayer(i);
+            var ball = _ballService.GetBall();
+            ball.OnHitGoal += player.TryIncrementScore;
+        }
+    }
     
     private void BindScoreEvents()
     {
@@ -49,7 +58,10 @@ internal class PlayersInteractor(IPlayersService playersService) : IPlayersInter
     private void DrawPlayer(IPlayer player, int screenWidth, int screenHeight)
     {
         var serviceProvider = DependencyContainer.ServiceProvider ?? throw new NullReferenceException($"{nameof(DependencyContainer)} does not have a {nameof(ServiceProvider)}");
-        var playerPresenter = serviceProvider.GetService<IPlayerPresenter>() ?? throw new NullReferenceException($"Unable to retrieve {nameof(IPlayerPresenter)}");
+        var playerPresenter = serviceProvider.GetService<IPlayerPresenter>();
+
+        if (playerPresenter is null)
+            return;
 
         playerPresenter.DrawPlayer(player.Index, player.Score, screenWidth, screenHeight);
     }

@@ -1,8 +1,4 @@
-﻿using Ball;
-using Container;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace Players
+﻿namespace Players
 {
     internal class Player(int index) : IPlayer
     {
@@ -10,19 +6,9 @@ namespace Players
         public int Score { get; private set; }
         public event Action<IPlayer>? OnScoreUpdated;
 
-        private int _goalIndex = -1;
-
-        public void BindGoalEvent(int goalIndex)
+        public void TryIncrementScore(int goalIndex)
         {
-            _goalIndex = goalIndex;
-            var ballService = DependencyContainer.ServiceProvider?.GetService<IBallService>();
-            var ball = ballService?.GetBall();
-            ball?.OnHitGoal += IncrementScoreIfCorrectGoal;
-        }
-
-        private void IncrementScoreIfCorrectGoal(int goalIndex)
-        {
-            if (goalIndex != _goalIndex)
+            if (goalIndex != Index)
                 return;
 
             IncrementScore();

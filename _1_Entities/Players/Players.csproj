@@ -6,9 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Container\Container.csproj" />
-    <ProjectReference Include="..\Ball\Ball.csproj" />
-  </ItemGroup>
-
 </Project>

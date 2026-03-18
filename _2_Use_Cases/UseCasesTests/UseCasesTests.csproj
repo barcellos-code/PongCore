@@ -15,9 +15,11 @@
     <ProjectReference Include="..\..\_1_Entities\Ball\Ball.csproj" />
     <ProjectReference Include="..\..\_1_Entities\Container\Container.csproj" />
     <ProjectReference Include="..\..\_1_Entities\Paddles\Paddles.csproj" />
+    <ProjectReference Include="..\..\_1_Entities\Players\Players.csproj" />
     <ProjectReference Include="..\..\_1_Entities\Stage\Stage.csproj" />
     <ProjectReference Include="..\BallInteractor\BallInteractor.csproj" />
     <ProjectReference Include="..\PaddlesInteractor\PaddlesInteractor.csproj" />
+    <ProjectReference Include="..\PlayersInteractor\PlayersInteractor.csproj" />
     <ProjectReference Include="..\StageInteractor\StageInteractor.csproj" />
   </ItemGroup>
 

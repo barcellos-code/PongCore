@@ -5,6 +5,5 @@
         int NumberOfPlayers { get; }
         void CreatePlayers(int numberOfPlayers);
         IPlayer GetPlayer(int index);
-        void BindGoalEvents();
     }
 }
