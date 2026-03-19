@@ -48,6 +48,9 @@ internal class Program
         // Start UI
         viewBatch.Start();
 
+        // Start match
+        matchController.StartMatch();
+
         // Start Ball Tick
         ballController.StartBallTick();
     }

@@ -1,6 +1,8 @@
 using Ball;
 using BallInteractor;
 using Container;
+using Match;
+using MatchInteractor;
 using Microsoft.Extensions.DependencyInjection;
 using Paddles;
 using PaddlesInteractor;
@@ -38,10 +40,12 @@ public static class TestContainer
         serviceCollection.AddSingleton<IStageService, StageService>();
         serviceCollection.AddSingleton<IPaddlesService, PaddlesService>();
         serviceCollection.AddSingleton<IPlayersService, PlayersService>();
+        serviceCollection.AddSingleton<IMatchService, MatchService>();
         serviceCollection.AddSingleton<IBallInteractor, BallInteractor.BallInteractor>();
         serviceCollection.AddSingleton<IStageInteractor, StageInteractor.StageInteractor>();
         serviceCollection.AddSingleton<IPaddlesInteractor, PaddlesInteractor.PaddlesInteractor>();
         serviceCollection.AddSingleton<IPlayersInteractor, PlayersInteractor.PlayersInteractor>();
+        serviceCollection.AddSingleton<IMatchInteractor, MatchInteractor.MatchInteractor>();
 
         return serviceCollection.BuildServiceProvider();
     }

@@ -9,6 +9,9 @@ internal class MatchController(IMatchInteractor matchInteractor) : IMatchControl
     public void CreateMatch(int winningScoreValue, int screenWidth, int screenHeight)
         => _matchInteractor.CreateMatch(winningScoreValue, screenWidth, screenHeight);
     
+    public void StartMatch()
+        => _matchInteractor.StartMatch();
+    
     public void BindScoreEvents()
         => _matchInteractor.BindScoreEvents();
 }

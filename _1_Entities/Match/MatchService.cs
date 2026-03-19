@@ -15,14 +15,6 @@ internal class MatchService : IMatchService
         return _match;
     }
 
-    public void BindScoreEvents()
-    {
-        if (_match == null)
-            throw new InvalidOperationException("No match has been created");
-        
-        _match.BindScoreEvents();
-    }
-
     public void Dispose()
         => _match = null;
 }

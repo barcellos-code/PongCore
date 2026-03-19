@@ -1,13 +1,9 @@
-using Container;
-using Microsoft.Extensions.DependencyInjection;
-using Players;
-
 namespace Match;
 
 internal class Match(int winningScoreValue) : IMatch
 {
     public bool IsOngoing { get; private set; }
-    public event Action<IPlayer>? OnMatchEnded;
+    public event Action<int>? OnMatchEnded;
 
     private readonly int _winningScoreValue = winningScoreValue;
 
@@ -19,28 +15,15 @@ internal class Match(int winningScoreValue) : IMatch
         IsOngoing = true;
     }
 
-    public void BindScoreEvents()
+    public void TryEndMatch(int playerIndex, int score)
     {
-        var playersService = DependencyContainer.ServiceProvider?.GetService<IPlayersService>();
-        
-        for (var i = 0; i < playersService?.NumberOfPlayers; i++)
-        {
-            var player = playersService?.GetPlayer(i);
-            player?.OnScoreUpdated += EndMatchIfPlayerWon;
-        }
+        if (score >= _winningScoreValue)
+            EndMatch(playerIndex);
     }
 
-    private void EndMatchIfPlayerWon(IPlayer player)
-    {
-        if (player.Score < _winningScoreValue)
-            return;
-        
-        EndMatch(player);
-    }
-
-    private void EndMatch(IPlayer winningPlayer)
+    private void EndMatch(int playerIndex)
     {
         IsOngoing = false;
-        OnMatchEnded?.Invoke(winningPlayer);
+        OnMatchEnded?.Invoke(playerIndex);
     }
 }
