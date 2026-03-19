@@ -6,4 +6,3 @@
 [X] Players project doesn't need to depend on Container and Ball
 [X] Match state is handled by match interactor in the use cases layer
 [X] Match project doesn't need to depend on Container and Players
-[ ] Only Players and Paddles services are really necessary
