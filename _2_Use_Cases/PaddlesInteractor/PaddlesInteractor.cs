@@ -1,5 +1,4 @@
 using Container;
-using Microsoft.Extensions.DependencyInjection;
 using Paddles;
 using System;
 
@@ -51,8 +50,7 @@ namespace PaddlesInteractor
 
         private static void DrawPaddle(IPaddle paddle)
         {
-            var serviceProvider = DependencyContainer.ServiceProvider ?? throw new NullReferenceException($"{nameof(DependencyContainer)} does not have a {nameof(ServiceProvider)}");
-            var paddlePresenter = serviceProvider.GetService<IPaddlePresenter>();
+            var paddlePresenter = DependencyContainer.GetService<IPaddlePresenter>();
 
             if (paddlePresenter is null)
                 return;

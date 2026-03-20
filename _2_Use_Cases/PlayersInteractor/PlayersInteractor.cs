@@ -1,8 +1,6 @@
 using Ball;
 using Container;
-using Microsoft.Extensions.DependencyInjection;
 using Players;
-using System;
 
 namespace PlayersInteractor
 {
@@ -64,8 +62,7 @@ namespace PlayersInteractor
     
         private void DrawPlayer(IPlayer player, int screenWidth, int screenHeight)
         {
-            var serviceProvider = DependencyContainer.ServiceProvider ?? throw new NullReferenceException($"{nameof(DependencyContainer)} does not have a {nameof(ServiceProvider)}");
-            var playerPresenter = serviceProvider.GetService<IPlayerPresenter>();
+            var playerPresenter = DependencyContainer.GetService<IPlayerPresenter>();
 
             if (playerPresenter is null)
                 return;

@@ -17,7 +17,7 @@ public static class TestContainer
             if (_serviceProvider == null)
             {
                 _serviceProvider = BuildServiceProvider();
-                DependencyContainer.ServiceProvider = _serviceProvider;
+                DependencyContainer.SetServiceProvider(_serviceProvider);
                 return _serviceProvider;
             }
 
