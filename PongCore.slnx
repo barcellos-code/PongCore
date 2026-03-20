@@ -29,16 +29,4 @@
     <Project Path="_3_Controllers_and_Presenters/StagePresenter/StagePresenter.csproj" />
     <Project Path="_3_Controllers_and_Presenters/TickService/TickService.csproj" />
   </Folder>
-  <Folder Name="/_4_Infrastructure/" />
-  <Folder Name="/_4_Infrastructure/ConsolePong/">
-    <Project Path="_4_Infrastructure/ConsolePong/ConsoleBallView/ConsoleBallView.csproj" />
-    <Project Path="_4_Infrastructure/ConsolePong/ConsoleMatchView/ConsoleMatchView.csproj" />
-    <Project Path="_4_Infrastructure/ConsolePong/ConsolePaddlesInput/ConsolePaddlesInput.csproj" />
-    <Project Path="_4_Infrastructure/ConsolePong/ConsolePaddleView/ConsolePaddleView.csproj" />
-    <Project Path="_4_Infrastructure/ConsolePong/ConsolePlayerView/ConsolePlayerView.csproj" />
-    <Project Path="_4_Infrastructure/ConsolePong/ConsoleStageView/ConsoleStageView.csproj" />
-    <Project Path="_4_Infrastructure/ConsolePong/ConsoleTickService/ConsoleTickService.csproj" />
-    <Project Path="_4_Infrastructure/ConsolePong/ConsoleViewBatch/ConsoleViewBatch.csproj" />
-    <Project Path="_4_Infrastructure/ConsolePong/Main/Main.csproj" />
-  </Folder>
 </Solution>
