@@ -10,4 +10,10 @@
     <ProjectReference Include="..\..\..\_3_Controllers_and_Presenters\TickService\TickService.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>ConsolePong</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
 </Project>

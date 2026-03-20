@@ -12,4 +12,13 @@
     <ProjectReference Include="..\..\_1_Entities\Stage\Stage.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>UseCasesTests</_Parameter1>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>ConsolePong</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+
 </Project>
