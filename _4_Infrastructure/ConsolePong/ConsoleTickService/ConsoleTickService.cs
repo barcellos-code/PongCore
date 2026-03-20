@@ -1,27 +1,29 @@
-namespace BallController;
+using TickService;
 
-internal class BallTick
+namespace ConsoleTickService;
+
+internal class ConsoleTickService : ITickService
 {
     private const int Milliseconds = 50;
 
     public event Action? OnTick;
 
-    private bool _isActive;
     private Thread? _tickRoutineThread;
 
-    public void StartTick()
+    public ConsoleTickService()
+    {
+        StartTick();
+    }
+
+    private void StartTick()
     {
         _tickRoutineThread = new Thread(TickRoutine);
-        _isActive = true;
         _tickRoutineThread.Start();
     }
 
-    public void StopTick()
-        => _isActive = false;
-
     private void TickRoutine()
     {
-        while (_isActive)
+        while (true)
         {
             OnTick?.Invoke();
             Thread.Sleep(Milliseconds);

@@ -29,12 +29,14 @@
     <ProjectReference Include="..\..\..\_3_Controllers_and_Presenters\PlayerPresenter\PlayerPresenter.csproj" />
     <ProjectReference Include="..\..\..\_3_Controllers_and_Presenters\StageController\StageController.csproj" />
     <ProjectReference Include="..\..\..\_3_Controllers_and_Presenters\StagePresenter\StagePresenter.csproj" />
+    <ProjectReference Include="..\..\..\_3_Controllers_and_Presenters\TickService\TickService.csproj" />
     <ProjectReference Include="..\..\..\_4_Infrastructure\ConsolePong\ConsoleBallView\ConsoleBallView.csproj" />
     <ProjectReference Include="..\..\..\_4_Infrastructure\ConsolePong\ConsolePaddleView\ConsolePaddleView.csproj" />
     <ProjectReference Include="..\..\..\_4_Infrastructure\ConsolePong\ConsolePlayerView\ConsolePlayerView.csproj" />
     <ProjectReference Include="..\..\..\_4_Infrastructure\ConsolePong\ConsoleStageView\ConsoleStageView.csproj" />
     <ProjectReference Include="..\ConsoleMatchView\ConsoleMatchView.csproj" />
     <ProjectReference Include="..\ConsolePaddlesInput\ConsolePaddlesInput.csproj" />
+    <ProjectReference Include="..\ConsoleTickService\ConsoleTickService.csproj" />
     <ProjectReference Include="..\ConsoleViewBatch\ConsoleViewBatch.csproj" />
   </ItemGroup>
 

@@ -27,8 +27,9 @@ using Stage;
 using StageController;
 using StageInteractor;
 using StagePresenter;
+using TickService;
 
-namespace ConsoleMain;
+namespace ConsolePong;
 
 internal static class ConsoleContainer
 {
@@ -91,6 +92,9 @@ internal static class ConsoleContainer
         serviceCollection.AddTransient<IPlayerView, PlayerView>();
         serviceCollection.AddTransient<IStageView, StageView>();
         serviceCollection.AddSingleton<IViewBatch, ViewBatch>();
+
+        // Other concrete implementations
+        serviceCollection.AddSingleton<ITickService, ConsoleTickService.ConsoleTickService>();
 
         return serviceCollection.BuildServiceProvider();
     }

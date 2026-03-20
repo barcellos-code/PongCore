@@ -6,7 +6,7 @@ using PaddlesController;
 using PlayersController;
 using StageController;
 
-namespace ConsoleMain;
+namespace ConsolePong;
 
 internal class Program
 {

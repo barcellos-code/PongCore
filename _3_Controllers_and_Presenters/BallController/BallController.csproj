@@ -9,6 +9,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\_2_Use_Cases\BallInteractor\BallInteractor.csproj" />
     <ProjectReference Include="..\..\_2_Use_Cases\MatchInteractor\MatchInteractor.csproj" />
+    <ProjectReference Include="..\TickService\TickService.csproj" />
   </ItemGroup>
 
 </Project>

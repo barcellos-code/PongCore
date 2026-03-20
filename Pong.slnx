@@ -27,6 +27,7 @@
     <Project Path="_3_Controllers_and_Presenters/PlayersController/PlayersController.csproj" />
     <Project Path="_3_Controllers_and_Presenters/StageController/StageController.csproj" />
     <Project Path="_3_Controllers_and_Presenters/StagePresenter/StagePresenter.csproj" />
+    <Project Path="_3_Controllers_and_Presenters/TickService/TickService.csproj" />
   </Folder>
   <Folder Name="/_4_Infrastructure/" />
   <Folder Name="/_4_Infrastructure/ConsolePong/">
@@ -37,6 +38,7 @@
     <Project Path="_4_Infrastructure/ConsolePong/ConsolePaddleView/ConsolePaddleView.csproj" />
     <Project Path="_4_Infrastructure/ConsolePong/ConsolePlayerView/ConsolePlayerView.csproj" />
     <Project Path="_4_Infrastructure/ConsolePong/ConsoleStageView/ConsoleStageView.csproj" />
+    <Project Path="_4_Infrastructure/ConsolePong/ConsoleTickService/ConsoleTickService.csproj" />
     <Project Path="_4_Infrastructure/ConsolePong/ConsoleViewBatch/ConsoleViewBatch.csproj" />
   </Folder>
 </Solution>
