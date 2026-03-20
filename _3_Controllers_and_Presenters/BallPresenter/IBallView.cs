@@ -1,6 +1,7 @@
-namespace BallPresenter;
-
-public interface IBallView
+namespace BallPresenter
 {
-    void DrawBall(int posX, int posY);
+    public interface IBallView
+    {
+        void DrawBall(int posX, int posY);
+    }
 }

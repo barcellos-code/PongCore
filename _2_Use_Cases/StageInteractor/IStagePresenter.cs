@@ -1,6 +1,7 @@
-namespace StageInteractor;
-
-public interface IStagePresenter
+namespace StageInteractor
 {
-    void DrawStage(int width, int height);
+    public interface IStagePresenter
+    {
+        void DrawStage(int width, int height);
+    }
 }

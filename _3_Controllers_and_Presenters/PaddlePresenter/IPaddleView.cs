@@ -1,6 +1,7 @@
-namespace PaddlePresenter;
-
-public interface IPaddleView
+namespace PaddlePresenter
 {
-    void DrawPaddle(int size, int posX, int posY);
+    public interface IPaddleView
+    {
+        void DrawPaddle(int size, int posX, int posY);
+    }
 }

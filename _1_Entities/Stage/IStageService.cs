@@ -1,4 +1,6 @@
-﻿namespace Stage
+﻿using System;
+
+namespace Stage
 {
     public interface IStageService : IDisposable
     {

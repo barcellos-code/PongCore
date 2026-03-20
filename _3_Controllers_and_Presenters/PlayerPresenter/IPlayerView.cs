@@ -1,6 +1,7 @@
-namespace PlayerPresenter;
-
-public interface IPlayerView
+namespace PlayerPresenter
 {
-    void DrawPlayer(int playerId, int score, int screenWidth, int screenHeight);
+    public interface IPlayerView
+    {
+        void DrawPlayer(int playerId, int score, int screenWidth, int screenHeight);
+    }
 }

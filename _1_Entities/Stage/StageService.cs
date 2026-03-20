@@ -1,4 +1,6 @@
-﻿namespace Stage
+﻿using System;
+
+namespace Stage
 {
     internal class StageService : IStageService
     {
@@ -6,7 +8,7 @@
 
         public void CreateStage(int width, int height)
         {
-            _stage = new(width, height);
+            _stage = new Stage(width, height);
         }
 
         public IStage GetStage()

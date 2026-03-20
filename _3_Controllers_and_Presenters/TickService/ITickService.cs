@@ -1,6 +1,9 @@
-namespace TickService;
+using System;
 
-public interface ITickService
+namespace TickService
 {
-    event Action OnTick;
+    public interface ITickService
+    {
+        event Action OnTick;
+    }
 }

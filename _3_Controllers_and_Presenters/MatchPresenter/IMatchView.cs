@@ -1,6 +1,7 @@
-namespace MatchPresenter;
-
-public interface IMatchView
+namespace MatchPresenter
 {
-    void DrawMatchEnded(int winningPlayerId, int screenWidth, int screenHeight);
+    public interface IMatchView
+    {
+        void DrawMatchEnded(int winningPlayerId, int screenWidth, int screenHeight);
+    }
 }

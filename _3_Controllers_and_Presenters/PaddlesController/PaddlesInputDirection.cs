@@ -1,7 +1,8 @@
-namespace PaddlesController;
-
-public enum PaddlesInputDirection
+namespace PaddlesController
 {
-    Up,
-    Down,
+    public enum PaddlesInputDirection
+    {
+        Up,
+        Down,
+    }
 }

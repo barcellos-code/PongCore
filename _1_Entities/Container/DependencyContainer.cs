@@ -1,6 +1,9 @@
-namespace Container;
+using System;
 
-public static class DependencyContainer
+namespace Container
 {
-    public static IServiceProvider? ServiceProvider { get; set; }
+    public static class DependencyContainer
+    {
+        public static IServiceProvider? ServiceProvider { get; set; }
+    }
 }

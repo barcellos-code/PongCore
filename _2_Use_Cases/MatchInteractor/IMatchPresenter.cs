@@ -1,6 +1,7 @@
-namespace MatchInteractor;
-
-public interface IMatchPresenter
+namespace MatchInteractor
 {
-    void DrawMatchEnded(int winningPlayerIndex, int screenWidth, int screenHeight);
+    public interface IMatchPresenter
+    {
+        void DrawMatchEnded(int winningPlayerIndex, int screenWidth, int screenHeight);
+    }
 }

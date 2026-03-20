@@ -1,7 +1,10 @@
-namespace Match;
+using System;
 
-public interface IMatchService : IDisposable
+namespace Match
 {
-    void CreateMatch(int winningScoreValue);
-    IMatch GetMatch();
+    public interface IMatchService : IDisposable
+    {
+        void CreateMatch(int winningScoreValue);
+        IMatch GetMatch();
+    }
 }

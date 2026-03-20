@@ -1,17 +1,23 @@
 using MatchInteractor;
 
-namespace MatchController;
-
-internal class MatchController(IMatchInteractor matchInteractor) : IMatchController
+namespace MatchController
 {
-    private readonly IMatchInteractor _matchInteractor = matchInteractor;
+    internal class MatchController : IMatchController
+    {
+        private readonly IMatchInteractor _matchInteractor;
 
-    public void CreateMatch(int winningScoreValue, int screenWidth, int screenHeight)
-        => _matchInteractor.CreateMatch(winningScoreValue, screenWidth, screenHeight);
+        public MatchController(IMatchInteractor matchInteractor)
+        {
+            _matchInteractor = matchInteractor;
+        }
+
+        public void CreateMatch(int winningScoreValue, int screenWidth, int screenHeight)
+            => _matchInteractor.CreateMatch(winningScoreValue, screenWidth, screenHeight);
     
-    public void StartMatch()
-        => _matchInteractor.StartMatch();
+        public void StartMatch()
+            => _matchInteractor.StartMatch();
     
-    public void BindScoreEvents()
-        => _matchInteractor.BindScoreEvents();
+        public void BindScoreEvents()
+            => _matchInteractor.BindScoreEvents();
+    }
 }

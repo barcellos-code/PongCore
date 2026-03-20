@@ -1,4 +1,6 @@
-﻿namespace Players
+﻿using System;
+
+namespace Players
 {
     public interface IPlayersService : IDisposable
     {

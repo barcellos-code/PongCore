@@ -1,4 +1,6 @@
-﻿namespace Paddles
+﻿using System;
+
+namespace Paddles
 {
     public interface IPaddlesService : IDisposable
     {

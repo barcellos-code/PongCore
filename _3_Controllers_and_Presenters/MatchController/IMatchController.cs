@@ -1,8 +1,9 @@
-namespace MatchController;
-
-public interface IMatchController
+namespace MatchController
 {
-    void CreateMatch(int winningScoreValue, int screenWidth, int screenHeight);
-    void StartMatch();
-    void BindScoreEvents();
+    public interface IMatchController
+    {
+        void CreateMatch(int winningScoreValue, int screenWidth, int screenHeight);
+        void StartMatch();
+        void BindScoreEvents();
+    }
 }

@@ -1,15 +1,25 @@
-﻿namespace Ball
+﻿using System;
+
+namespace Ball
 {
-    internal class Ball(int posX, int posY, int dirX, int dirY) : IBall
+    internal class Ball : IBall
     {
-        public int PositionX { get; private set; } = posX;
+        public int PositionX { get; private set; }
 
-        public int PositionY { get; private set; } = posY;
+        public int PositionY { get; private set; }
 
-        public int DirectionX { get; private set; } = dirX;
+        public int DirectionX { get; private set; }
 
-        public int DirectionY { get; private set; } = dirY;
+        public int DirectionY { get; private set; }
         public event Action<int>? OnHitGoal;
+
+        public Ball(int posX, int posY, int dirX, int dirY)
+        {
+            PositionX = posX;
+            PositionY = posY;
+            DirectionX = dirX;
+            DirectionY = dirY;
+        }
 
         public void Move()
         {

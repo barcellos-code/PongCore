@@ -1,9 +1,12 @@
-namespace Match;
+using System;
 
-public interface IMatch
+namespace Match
 {
-    bool IsOngoing { get; }
-    event Action<int> OnMatchEnded;
-    void StartMatch();
-    void TryEndMatch(int playerIndex, int score);
+    public interface IMatch
+    {
+        bool IsOngoing { get; }
+        event Action<int> OnMatchEnded;
+        void StartMatch();
+        void TryEndMatch(int playerIndex, int score);
+    }
 }

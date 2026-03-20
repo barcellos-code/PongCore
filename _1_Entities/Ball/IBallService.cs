@@ -1,4 +1,6 @@
-﻿namespace Ball
+﻿using System;
+
+namespace Ball
 {
     public interface IBallService : IDisposable
     {

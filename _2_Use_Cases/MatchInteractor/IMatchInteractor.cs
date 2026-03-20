@@ -1,9 +1,12 @@
-namespace MatchInteractor;
+using System;
 
-public interface IMatchInteractor
+namespace MatchInteractor
 {
-    event Action OnMatchEnded;
-    void CreateMatch(int winningScoreValue, int screenWidth, int screenHeight);
-    void StartMatch();
-    void BindScoreEvents();
+    public interface IMatchInteractor
+    {
+        event Action OnMatchEnded;
+        void CreateMatch(int winningScoreValue, int screenWidth, int screenHeight);
+        void StartMatch();
+        void BindScoreEvents();
+    }
 }

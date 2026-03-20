@@ -1,6 +1,7 @@
-namespace StageController;
-
-public interface IStageController
+namespace StageController
 {
-    void CreateStage(int width, int height);
+    public interface IStageController
+    {
+        void CreateStage(int width, int height);
+    }
 }

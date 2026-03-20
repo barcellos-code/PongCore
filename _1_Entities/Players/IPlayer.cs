@@ -1,9 +1,12 @@
-namespace Players;
+using System;
 
-public interface IPlayer
+namespace Players
 {
-    int Index { get; }
-    int Score {get; }
-    event Action<IPlayer> OnScoreUpdated;
-    void TryIncrementScore(int goalIndex);
+    public interface IPlayer
+    {
+        int Index { get; }
+        int Score { get; }
+        event Action<IPlayer> OnScoreUpdated;
+        void TryIncrementScore(int goalIndex);
+    }
 }

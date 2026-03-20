@@ -1,14 +1,20 @@
 using PlayersInteractor;
 
-namespace PlayerPresenter;
-
-internal class PlayerPresenter(IPlayerView playerView) : IPlayerPresenter
+namespace PlayerPresenter
 {
-    private readonly IPlayerView _playerView = playerView;
-
-    public void DrawPlayer(int playerIndex, int score, int screenWidth, int screenHeight)
+    internal class PlayerPresenter : IPlayerPresenter
     {
-        var playerId = playerIndex + 1;
-        _playerView.DrawPlayer(playerId, score, screenWidth, screenHeight);
+        private readonly IPlayerView _playerView;
+
+        public PlayerPresenter(IPlayerView playerView)
+        {
+            _playerView = playerView;
+        }
+
+        public void DrawPlayer(int playerIndex, int score, int screenWidth, int screenHeight)
+        {
+            var playerId = playerIndex + 1;
+            _playerView.DrawPlayer(playerId, score, screenWidth, screenHeight);
+        }
     }
 }

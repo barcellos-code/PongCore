@@ -1,7 +1,8 @@
-namespace PlayersInteractor;
-
-public interface IPlayersInteractor
+namespace PlayersInteractor
 {
-    void CreatePlayers(int numberOfPlayers, int screenWidth, int screenHeight);
-    void BindGoalEvents();
+    public interface IPlayersInteractor
+    {
+        void CreatePlayers(int numberOfPlayers, int screenWidth, int screenHeight);
+        void BindGoalEvents();
+    }
 }

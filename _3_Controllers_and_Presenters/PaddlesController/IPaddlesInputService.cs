@@ -1,8 +1,11 @@
-namespace PaddlesController;
+using System;
 
-public interface IPaddlesInputService
+namespace PaddlesController
 {
-    event Action<int, PaddlesInputDirection> OnInput;
-    void StartInputHandling();
-    void StopInputHandling();
+    public interface IPaddlesInputService
+    {
+        event Action<int, PaddlesInputDirection> OnInput;
+        void StartInputHandling();
+        void StopInputHandling();
+    }
 }

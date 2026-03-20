@@ -1,27 +1,28 @@
 using Stage;
 
-namespace StageInteractor;
-
-internal class StageInteractor : IStageInteractor
+namespace StageInteractor
 {
-    public StageInteractor(IStageService stageService, IStagePresenter stagePresenter)
+    internal class StageInteractor : IStageInteractor
     {
-        _stageService = stageService;
-        _stagePresenter = stagePresenter;
-    }
+        public StageInteractor(IStageService stageService, IStagePresenter stagePresenter)
+        {
+            _stageService = stageService;
+            _stagePresenter = stagePresenter;
+        }
 
-    public StageInteractor(IStageService stageService)
-    {
-        _stageService = stageService;
-    }
+        public StageInteractor(IStageService stageService)
+        {
+            _stageService = stageService;
+        }
 
-    private readonly IStageService _stageService;
-    private readonly IStagePresenter? _stagePresenter;
+        private readonly IStageService _stageService;
+        private readonly IStagePresenter? _stagePresenter;
 
-    public void CreateStage(int width, int height)
-    {
-        _stageService.CreateStage(width, height);
-        var stage = _stageService.GetStage();
-        _stagePresenter?.DrawStage(stage.Width, stage.Height);
+        public void CreateStage(int width, int height)
+        {
+            _stageService.CreateStage(width, height);
+            var stage = _stageService.GetStage();
+            _stagePresenter?.DrawStage(stage.Width, stage.Height);
+        }
     }
 }

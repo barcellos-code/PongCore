@@ -1,10 +1,13 @@
-﻿namespace Paddles
+﻿using System;
+using System.Collections.Generic;
+
+namespace Paddles
 {
     internal class PaddlesService : IPaddlesService
     {
         public int NumberOfPaddles => _paddles.Count;
 
-        private readonly List<Paddle> _paddles = [];
+        private readonly List<Paddle> _paddles = new List<Paddle>();
 
         public void CreatePaddles(int numberOfPaddles, int paddleSize, int stageWidth,
             int stageHeight)
@@ -15,18 +18,18 @@
             var firstXPos = 1;
             var lastXPos = stageWidth - 2;
             var deltaX = (lastXPos - firstXPos) / (numberOfPaddles - 1);
-            var actualPaddleSize = int.Min(stageHeight, paddleSize);
+            var actualPaddleSize = Math.Min(stageHeight, paddleSize);
             var yPos = (stageHeight / 2) - (actualPaddleSize / 2);
 
-            _paddles.Add(new(actualPaddleSize, firstXPos, yPos, stageHeight));
+            _paddles.Add(new Paddle(actualPaddleSize, firstXPos, yPos, stageHeight));
 
             for (var i = 1; i < numberOfPaddles - 1; i++)
             {
                 var xPos = firstXPos + deltaX * i;
-                _paddles.Add(new(actualPaddleSize, xPos, yPos, stageHeight));
+                _paddles.Add(new Paddle(actualPaddleSize, xPos, yPos, stageHeight));
             }
 
-            _paddles.Add(new(actualPaddleSize, lastXPos, yPos, stageHeight));
+            _paddles.Add(new Paddle(actualPaddleSize, lastXPos, yPos, stageHeight));
         }
 
         public IPaddle GetPaddle(int index)

@@ -1,29 +1,37 @@
-namespace Match;
+using System;
 
-internal class Match(int winningScoreValue) : IMatch
+namespace Match
 {
-    public bool IsOngoing { get; private set; }
-    public event Action<int>? OnMatchEnded;
-
-    private readonly int _winningScoreValue = winningScoreValue;
-
-    public void StartMatch()
+    internal class Match : IMatch
     {
-        if (IsOngoing)
-            throw new InvalidOperationException("This match is already ongoing");
-        
-        IsOngoing = true;
-    }
+        public bool IsOngoing { get; private set; }
+        public event Action<int>? OnMatchEnded;
 
-    public void TryEndMatch(int playerIndex, int score)
-    {
-        if (score >= _winningScoreValue)
-            EndMatch(playerIndex);
-    }
+        private readonly int _winningScoreValue;
 
-    private void EndMatch(int playerIndex)
-    {
-        IsOngoing = false;
-        OnMatchEnded?.Invoke(playerIndex);
+        public Match(int winningScoreValue)
+        {
+            _winningScoreValue = winningScoreValue;
+        }
+
+        public void StartMatch()
+        {
+            if (IsOngoing)
+                throw new InvalidOperationException("This match is already ongoing");
+
+            IsOngoing = true;
+        }
+
+        public void TryEndMatch(int playerIndex, int score)
+        {
+            if (score >= _winningScoreValue)
+                EndMatch(playerIndex);
+        }
+
+        private void EndMatch(int playerIndex)
+        {
+            IsOngoing = false;
+            OnMatchEnded?.Invoke(playerIndex);
+        }
     }
 }

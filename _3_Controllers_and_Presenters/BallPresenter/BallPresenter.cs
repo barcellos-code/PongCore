@@ -1,11 +1,17 @@
 using BallInteractor;
 
-namespace BallPresenter;
-
-internal class BallPresenter(IBallView ballView) : IBallPresenter
+namespace BallPresenter
 {
-    private readonly IBallView _ballView = ballView;
+    internal class BallPresenter : IBallPresenter
+    {
+        private readonly IBallView _ballView;
 
-    public void DrawBall(int posX, int posY)
-        => _ballView.DrawBall(posX, posY);
+        public BallPresenter(IBallView ballView)
+        {
+            _ballView = ballView;
+        }
+
+        public void DrawBall(int posX, int posY)
+            => _ballView.DrawBall(posX, posY);
+    }
 }

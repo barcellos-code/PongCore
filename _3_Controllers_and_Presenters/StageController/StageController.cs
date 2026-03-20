@@ -1,11 +1,17 @@
 using StageInteractor;
 
-namespace StageController;
-
-internal class StageController(IStageInteractor stageInteractor) : IStageController
+namespace StageController
 {
-    private readonly IStageInteractor _stageInteractor = stageInteractor;
+    internal class StageController : IStageController
+    {
+        private readonly IStageInteractor _stageInteractor;
 
-    public void CreateStage(int width, int height)
-        => _stageInteractor.CreateStage(width, height);
+        public StageController(IStageInteractor stageInteractor)
+        {
+            _stageInteractor = stageInteractor;
+        }
+
+        public void CreateStage(int width, int height)
+            => _stageInteractor.CreateStage(width, height);
+    }
 }

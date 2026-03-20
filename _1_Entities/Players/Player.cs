@@ -1,10 +1,17 @@
-﻿namespace Players
+﻿using System;
+
+namespace Players
 {
-    internal class Player(int index) : IPlayer
+    internal class Player : IPlayer
     {
-        public int Index { get; private set; } = index;
+        public int Index { get; private set; }
         public int Score { get; private set; }
         public event Action<IPlayer>? OnScoreUpdated;
+
+        public Player(int index)
+        {
+            Index = index;
+        }
 
         public void TryIncrementScore(int goalIndex)
         {

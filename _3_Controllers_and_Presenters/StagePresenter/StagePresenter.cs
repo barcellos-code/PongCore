@@ -1,11 +1,17 @@
 using StageInteractor;
 
-namespace StagePresenter;
-
-internal class StagePresenter(IStageView stageView) : IStagePresenter
+namespace StagePresenter
 {
-    private readonly IStageView _stageVIew = stageView;
+    internal class StagePresenter : IStagePresenter
+    {
+        private readonly IStageView _stageVIew;
 
-    public void DrawStage(int width, int height)
-        => _stageVIew.DrawStage(width, height);
+        public StagePresenter(IStageView stageView)
+        {
+            _stageVIew = stageView;
+        }
+
+        public void DrawStage(int width, int height)
+            => _stageVIew.DrawStage(width, height);
+    }
 }

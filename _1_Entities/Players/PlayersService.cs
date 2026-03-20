@@ -1,12 +1,13 @@
-﻿namespace Players
+﻿using System;
+using System.Collections.Generic;
+
+namespace Players
 {
     internal class PlayersService : IPlayersService, IDisposable
     {
-        private const int MaxScoringPlayersAmount = 2;
-
         public int NumberOfPlayers => _players.Count;
 
-        private readonly List<Player> _players = [];
+        private readonly List<Player> _players = new List<Player>();
 
         public void CreatePlayers(int numberOfPlayers)
         {

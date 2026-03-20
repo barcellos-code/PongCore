@@ -1,7 +1,8 @@
-namespace BallController;
-
-public interface IBallController
+namespace BallController
 {
-    void CreateBall(int posX, int posY, int directionX, int directionY);
-    void StartBallTick();
+    public interface IBallController
+    {
+        void CreateBall(int posX, int posY, int directionX, int directionY);
+        void StartBallTick();
+    }
 }

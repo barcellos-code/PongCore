@@ -1,7 +1,8 @@
-namespace BallInteractor;
-
-public interface IBallInteractor
+namespace BallInteractor
 {
-    void CreateBall(int posX, int posY, int directionX, int directionY);
-    void MoveBall();
+    public interface IBallInteractor
+    {
+        void CreateBall(int posX, int posY, int directionX, int directionY);
+        void MoveBall();
+    }
 }
