@@ -15,7 +15,7 @@
       <_Parameter1>UseCasesTests</_Parameter1>
     </AssemblyAttribute>
     <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
-      <_Parameter1>ConsolePong</_Parameter1>
+      <_Parameter1>Main</_Parameter1>
     </AssemblyAttribute>
   </ItemGroup>
 
