@@ -1,4 +1,4 @@
-using Container;
+using DependencyContainer;
 using Paddles;
 using System;
 
@@ -50,7 +50,7 @@ namespace PaddlesInteractor
 
         private static void DrawPaddle(IPaddle paddle)
         {
-            var paddlePresenter = DependencyContainer.GetService<IPaddlePresenter>();
+            var paddlePresenter = Container.GetService<IPaddlePresenter>();
 
             if (paddlePresenter is null)
                 return;

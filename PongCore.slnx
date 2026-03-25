@@ -1,7 +1,7 @@
 <Solution>
   <Folder Name="/_1_Entities/">
     <Project Path="_1_Entities/Ball/Ball.csproj" />
-    <Project Path="_1_Entities/Container/Container.csproj" />
+    <Project Path="_1_Entities/DependencyContainer/DependencyContainer.csproj" />
     <Project Path="_1_Entities/EntitiesTests/EntitiesTests.csproj" />
     <Project Path="_1_Entities/Match/Match.csproj" />
     <Project Path="_1_Entities/Paddles/Paddles.csproj" />

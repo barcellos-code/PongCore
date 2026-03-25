@@ -1,5 +1,5 @@
 using Ball;
-using Container;
+using DependencyContainer;
 using Match;
 using Microsoft.Extensions.DependencyInjection;
 using Paddles;
@@ -17,7 +17,7 @@ public static class TestContainer
             if (_serviceProvider == null)
             {
                 _serviceProvider = BuildServiceProvider();
-                DependencyContainer.SetServiceProvider(_serviceProvider);
+                Container.SetServiceProvider(_serviceProvider);
                 return _serviceProvider;
             }
 

@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\_1_Entities\Container\Container.csproj" />
+    <ProjectReference Include="..\..\_1_Entities\DependencyContainer\DependencyContainer.csproj" />
     <ProjectReference Include="..\..\_1_Entities\Paddles\Paddles.csproj" />
   </ItemGroup>
 

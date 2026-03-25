@@ -1,6 +1,6 @@
 using Ball;
 using BallInteractor;
-using Container;
+using DependencyContainer;
 using Match;
 using MatchInteractor;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +22,7 @@ public static class TestContainer
             if (_serviceProvider == null)
             {
                 _serviceProvider = BuildServiceProvider();
-                DependencyContainer.SetServiceProvider(_serviceProvider);
+                Container.SetServiceProvider(_serviceProvider);
                 return _serviceProvider;
             }
 

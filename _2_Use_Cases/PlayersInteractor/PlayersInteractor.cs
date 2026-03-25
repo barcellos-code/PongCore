@@ -1,5 +1,5 @@
 using Ball;
-using Container;
+using DependencyContainer;
 using Players;
 
 namespace PlayersInteractor
@@ -62,7 +62,7 @@ namespace PlayersInteractor
     
         private void DrawPlayer(IPlayer player, int screenWidth, int screenHeight)
         {
-            var playerPresenter = DependencyContainer.GetService<IPlayerPresenter>();
+            var playerPresenter = Container.GetService<IPlayerPresenter>();
 
             if (playerPresenter is null)
                 return;

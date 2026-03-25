@@ -1,9 +1,9 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Container
+namespace DependencyContainer
 {
-    public static class DependencyContainer
+    public static class Container
     {
         private static IServiceProvider? ServiceProvider { get; set; }
 
@@ -13,7 +13,7 @@ namespace Container
         public static T? GetService<T>() where T : class
         {
             if (ServiceProvider is null)
-                throw new NullReferenceException($"{nameof(DependencyContainer)}'s {nameof(ServiceProvider)} is null");
+                throw new NullReferenceException($"{nameof(Container)}'s {nameof(ServiceProvider)} is null");
 
             return ServiceProvider.GetService<T>();
         }
