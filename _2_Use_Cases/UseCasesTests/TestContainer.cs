@@ -11,42 +11,43 @@ using PlayersInteractor;
 using Stage;
 using StageInteractor;
 
-namespace UseCasesTests;
-
-public static class TestContainer
+namespace UseCasesTests
 {
-    public static IServiceProvider ServiceProvider
+    public static class TestContainer
     {
-        get
+        public static IServiceProvider ServiceProvider
         {
-            if (_serviceProvider == null)
+            get
             {
-                _serviceProvider = BuildServiceProvider();
-                Container.SetServiceProvider(_serviceProvider);
+                if (_serviceProvider == null)
+                {
+                    _serviceProvider = BuildServiceProvider();
+                    Container.SetServiceProvider(_serviceProvider);
+                    return _serviceProvider;
+                }
+
                 return _serviceProvider;
             }
-
-            return _serviceProvider;
         }
-    }
 
-    private static IServiceProvider? _serviceProvider;
+        private static IServiceProvider? _serviceProvider;
 
-    private static ServiceProvider BuildServiceProvider()
-    {
-        var serviceCollection = new ServiceCollection();
+        private static ServiceProvider BuildServiceProvider()
+        {
+            var serviceCollection = new ServiceCollection();
 
-        serviceCollection.AddSingleton<IBallService, BallService>();
-        serviceCollection.AddSingleton<IStageService, StageService>();
-        serviceCollection.AddSingleton<IPaddlesService, PaddlesService>();
-        serviceCollection.AddSingleton<IPlayersService, PlayersService>();
-        serviceCollection.AddSingleton<IMatchService, MatchService>();
-        serviceCollection.AddSingleton<IBallInteractor, BallInteractor.BallInteractor>();
-        serviceCollection.AddSingleton<IStageInteractor, StageInteractor.StageInteractor>();
-        serviceCollection.AddSingleton<IPaddlesInteractor, PaddlesInteractor.PaddlesInteractor>();
-        serviceCollection.AddSingleton<IPlayersInteractor, PlayersInteractor.PlayersInteractor>();
-        serviceCollection.AddSingleton<IMatchInteractor, MatchInteractor.MatchInteractor>();
+            serviceCollection.AddSingleton<IBallService, BallService>();
+            serviceCollection.AddSingleton<IStageService, StageService>();
+            serviceCollection.AddSingleton<IPaddlesService, PaddlesService>();
+            serviceCollection.AddSingleton<IPlayersService, PlayersService>();
+            serviceCollection.AddSingleton<IMatchService, MatchService>();
+            serviceCollection.AddSingleton<IBallInteractor, BallInteractor.BallInteractor>();
+            serviceCollection.AddSingleton<IStageInteractor, StageInteractor.StageInteractor>();
+            serviceCollection.AddSingleton<IPaddlesInteractor, PaddlesInteractor.PaddlesInteractor>();
+            serviceCollection.AddSingleton<IPlayersInteractor, PlayersInteractor.PlayersInteractor>();
+            serviceCollection.AddSingleton<IMatchInteractor, MatchInteractor.MatchInteractor>();
 
-        return serviceCollection.BuildServiceProvider();
+            return serviceCollection.BuildServiceProvider();
+        }
     }
 }

@@ -1,45 +1,46 @@
 using Match;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace EntitiesTests;
-
-[TestClass]
-public class MatchTests
+namespace EntitiesTests
 {
-    [TestMethod]
-    public void TestMatchInitialState()
+    [TestClass]
+    public class MatchTests
     {
-        // Arrange
-        var matchService = TestContainer.ServiceProvider.GetService<IMatchService>();
-        matchService?.Dispose();
-        var winningScoreValue = 1;
-        var expectedMatchOngoingState = false;
+        [TestMethod]
+        public void TestMatchInitialState()
+        {
+            // Arrange
+            var matchService = TestContainer.ServiceProvider.GetService<IMatchService>();
+            matchService?.Dispose();
+            var winningScoreValue = 1;
+            var expectedMatchOngoingState = false;
 
-        // Act
-        matchService?.CreateMatch(winningScoreValue);
-        var match = matchService?.GetMatch();
-        var actualMatchOngoingState = match?.IsOngoing;
+            // Act
+            matchService?.CreateMatch(winningScoreValue);
+            var match = matchService?.GetMatch();
+            var actualMatchOngoingState = match?.IsOngoing;
 
-        // Assert
-        Assert.AreEqual(expectedMatchOngoingState, actualMatchOngoingState);
-    }
+            // Assert
+            Assert.AreEqual(expectedMatchOngoingState, actualMatchOngoingState);
+        }
 
-    [TestMethod]
-    public void TestMatchStart()
-    {
-        // Arrange
-        var matchService = TestContainer.ServiceProvider.GetService<IMatchService>();
-        matchService?.Dispose();
-        var winningScoreValue = 1;
-        var expectedMatchOngoingState = true;
+        [TestMethod]
+        public void TestMatchStart()
+        {
+            // Arrange
+            var matchService = TestContainer.ServiceProvider.GetService<IMatchService>();
+            matchService?.Dispose();
+            var winningScoreValue = 1;
+            var expectedMatchOngoingState = true;
 
-        // Act
-        matchService?.CreateMatch(winningScoreValue);
-        var match = matchService?.GetMatch();
-        match?.StartMatch();
-        var actualMatchOngoingState = match?.IsOngoing;
+            // Act
+            matchService?.CreateMatch(winningScoreValue);
+            var match = matchService?.GetMatch();
+            match?.StartMatch();
+            var actualMatchOngoingState = match?.IsOngoing;
 
-        // Assert
-        Assert.AreEqual(expectedMatchOngoingState, actualMatchOngoingState);
+            // Assert
+            Assert.AreEqual(expectedMatchOngoingState, actualMatchOngoingState);
+        }
     }
 }

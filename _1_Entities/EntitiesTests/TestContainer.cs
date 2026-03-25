@@ -6,37 +6,38 @@ using Paddles;
 using Players;
 using Stage;
 
-namespace EntitiesTests;
-
-public static class TestContainer
+namespace EntitiesTests
 {
-    public static IServiceProvider ServiceProvider
+    public static class TestContainer
     {
-        get
+        public static IServiceProvider ServiceProvider
         {
-            if (_serviceProvider == null)
+            get
             {
-                _serviceProvider = BuildServiceProvider();
-                Container.SetServiceProvider(_serviceProvider);
+                if (_serviceProvider == null)
+                {
+                    _serviceProvider = BuildServiceProvider();
+                    Container.SetServiceProvider(_serviceProvider);
+                    return _serviceProvider;
+                }
+
                 return _serviceProvider;
             }
-
-            return _serviceProvider;
         }
-    }
 
-    private static IServiceProvider? _serviceProvider;
+        private static IServiceProvider? _serviceProvider;
 
-    private static ServiceProvider BuildServiceProvider()
-    {
-        var serviceCollection = new ServiceCollection();
+        private static ServiceProvider BuildServiceProvider()
+        {
+            var serviceCollection = new ServiceCollection();
         
-        serviceCollection.AddSingleton<IBallService, BallService>();
-        serviceCollection.AddSingleton<IMatchService, MatchService>();
-        serviceCollection.AddSingleton<IPaddlesService, PaddlesService>();
-        serviceCollection.AddSingleton<IPlayersService, PlayersService>();
-        serviceCollection.AddSingleton<IStageService, StageService>();
+            serviceCollection.AddSingleton<IBallService, BallService>();
+            serviceCollection.AddSingleton<IMatchService, MatchService>();
+            serviceCollection.AddSingleton<IPaddlesService, PaddlesService>();
+            serviceCollection.AddSingleton<IPlayersService, PlayersService>();
+            serviceCollection.AddSingleton<IStageService, StageService>();
 
-        return serviceCollection.BuildServiceProvider();
+            return serviceCollection.BuildServiceProvider();
+        }
     }
 }
